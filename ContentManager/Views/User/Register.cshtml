@@ -1,0 +1,60 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model ContentManager.Models.User
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<h1 style="font-family:'Indie Flower',sans-serif">Register</h1>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <i>
+                <b>
+                    @Html.LabelFor(model => model.email, "Enter your Email:", htmlAttributes: new { @class = "control-label col-md-2" })
+                </b>
+            </i>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <i>
+                <b>
+                    @Html.LabelFor(model => model.password, "Set your Password:", htmlAttributes: new { @class = "control-label col-md-2" })
+                </b>
+            </i>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        @*Reference Properly
+        https://stackoverflow.com/questions/11651254/how-to-change-the-display-name-for-labelfor-in-razor-in-mvc3*@
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Register" class="btn btn-primary"/>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    <i>
+        <b>
+            @Html.ActionLink("Already have an Account?", "LogIn")
+        </b>
+    </i>
+</div>

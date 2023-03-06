@@ -1,0 +1,29 @@
+﻿@model IEnumerable<ContentManager.Models.Category>
+
+@{
+    ViewData["Title"] = "UserIndex";
+}
+
+@{
+    Layout = "_UserLayout";
+}
+
+<h1 style="font-family:'Indie Flower',sans-serif">Categories</h1>
+
+<table class="table">
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <hr>
+                    <b>
+                        <i>
+                            @Html.ActionLink(item.categoryName, "UserDetails", new {id =item.categoryId})
+                        </i>
+                    </b>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

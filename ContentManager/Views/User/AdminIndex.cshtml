@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ContentManager.Models.User>
+
+@{
+    ViewData["Title"] = "AdminIndex";
+}
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<h1 style="font-family:'Indie Flower',sans-serif">Admin List</h1>
+<hr />
+
+<p>
+    <b>
+        <i>
+            @Html.ActionLink( "Create New", "Create")
+        </i>
+    </b>
+</p>
+
+<table class="table">
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <b>
+                        <i>
+                            <hr />
+                            @Html.DisplayFor(modelItem => item.email)
+                            @Html.ActionLink("Details", "Details", new {id =item.id})
+                            @Html.ActionLink("Delete", "Delete", new {id = item.id})
+                        </i>
+                    </b>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

@@ -1,0 +1,91 @@
+﻿@model ContentManager.Models.Category
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<h1 style="font-family:'Indie Flower',sans-serif">Add Category</h1>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <b>
+                <i>
+                    @Html.LabelFor(model => model.categoryName, "Enter New Category Name:", htmlAttributes: new { @class = "control-label col-md-2" })
+                </i>
+            </b>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.categoryName, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <b>
+                <i>
+                    @Html.LabelFor(model => model.categoryInformation, "Enter New Category Information:", htmlAttributes: new { @class = "control-label col-md-2" })
+                </i>
+            </b>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.categoryInformation, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <b>
+                <i>
+                    @Html.LabelFor(model => model.categoryImageUrl, "Enter New Category Image URL:", htmlAttributes: new { @class = "control-label col-md-2" })
+                </i>
+            </b>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.categoryImageUrl, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <b>
+                <i>
+                    @Html.LabelFor(model => model.categoryVideoUrl, "Enter New Category Video URL:", htmlAttributes: new { @class = "control-label col-md-2" })
+                </i>
+            </b>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.categoryVideoUrl, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <b>
+                <i>
+                    @Html.LabelFor(model => model.categoryAudioUrl, "Enter New Category Audio URL:", htmlAttributes: new { @class = "control-label col-md-2" })
+                </i>
+            </b>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.categoryAudioUrl, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        @*Reference Properly
+    https://stackoverflow.com/questions/11651254/how-to-change-the-display-name-for-labelfor-in-razor-in-mvc3*@
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create Category" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    <b>
+        <i>
+            @Html.ActionLink("Return to Category List", "AdminIndex")
+        </i>
+    </b>
+</div>

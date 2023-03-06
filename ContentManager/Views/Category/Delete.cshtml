@@ -1,0 +1,22 @@
+﻿@model IEnumerable<ContentManager.Models.Category>
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<h1 style="font-family:'Indie Flower',sans-serif">Category Deleted Successfully</h1>
+
+<div>
+    <hr />
+</div>
+<p>
+    <b>
+        <i>
+            @Html.ActionLink("Back to List", "AdminIndex")
+        </i>
+    </b>
+</p>

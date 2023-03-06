@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ContentManager</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" sans-serifsite.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ContentManager.styles.css" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet" />
+</head>
+
+@*Q Change All Page Colours Here*@
+<body style="background-color:#00FFFF;">
+    <header style="font-family:'Indie Flower',sans-serif" >
+    
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            @*Q Change Navigation Bar Colour Here*@
+            <div class="container-fluid" style="background-color: #FF69B4">
+
+                @*Q Change Navigation Bar Logo Here*@
+                <img src="~/css/logo.png" width="30" height="30" />
+
+                @*Q Change Navigation Bar Name Here*@
+                <b style="font-size:x-large">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ContentManager</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </b>
+
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <b style="font-size:large">
+
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy Policy</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="AdminIndex">Categories</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="AdminIndex">Admins</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="UserIndex">Users</a>
+                            </li>
+                        </ul>
+                    </b>
+                    
+                   
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    @*Q Change Footer Colour Here*@
+    <footer class="border-top footer text-muted" style="background-color: #797e11">
+        
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

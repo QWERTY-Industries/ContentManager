@@ -1,0 +1,43 @@
+﻿@model ContentManager.Models.User;
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<h1 style="font-family:'Indie Flower',sans-serif">Admin Details</h1>
+
+<div>
+    <dl class="dl-horizontal">
+        <hr />
+
+        <dt>
+            <a>Email</a>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <hr />
+
+        <dt>
+            <a>Name</a>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+    </dl>
+</div>
+<p>
+    <b>
+        <i>
+            <hr />
+            @Html.ActionLink("Back to List", "AdminIndex")
+        </i>
+    </b>
+</p>

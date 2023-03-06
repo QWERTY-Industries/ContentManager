@@ -1,0 +1,29 @@
+﻿@model IEnumerable<ContentManager.Models.User>
+
+@{
+    ViewData["Title"] = "AdminIndex";
+}
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<h1 style="font-family:'Indie Flower',sans-serif">User List</h1>
+
+<table class="table">
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <hr>
+                    <b>
+                        <i>
+                            @Html.DisplayFor(modelItem => item.email)
+                        </i>
+                    </b>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

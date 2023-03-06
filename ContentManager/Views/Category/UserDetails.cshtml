@@ -1,0 +1,68 @@
+﻿@model IEnumerable<ContentManager.Models.Category>
+
+@{
+    ViewData["Title"] = "UserDetails";
+}
+
+@{
+    Layout = "_UserLayout";
+}
+
+<h1 style="font-family:'Indie Flower',sans-serif">Category Details</h1>
+
+<div>
+    <dl class="dl-horizontal">
+        <hr /> @*Q Line Break*@
+
+        <dt>
+            <a>Title</a>
+        </dt>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.categoryName)
+                </td>
+            </tr>
+        }
+
+        <hr />
+
+        <dt>
+            <a>Description</a>
+        </dt>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.categoryInformation)
+                </td>
+            </tr>
+        }
+
+        <hr />
+
+        @*Q This code displays a link from firebase*@
+        <a href=@ViewBag.Image>Image</a>
+        @*https://www.tutorialsteacher.com/mvc/viewbag-in-asp.net-mvc*@
+
+        <hr />
+
+        <a href=@ViewBag.Video>Video</a>
+
+        <hr />
+
+        <a href=@ViewBag.Audio>Audio</a>
+
+        <hr />
+    </dl>
+</div>
+<p>
+    <b>
+        <i>
+            @Html.ActionLink("Back to List", "UserIndex")
+        </i>
+    </b>
+</p>

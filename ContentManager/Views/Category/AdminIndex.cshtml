@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ContentManager.Models.Category>
+
+@{
+    ViewData["Title"] = "AdminIndex";
+}
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<h1 style="font-family:'Indie Flower',sans-serif">Category List</h1>
+<hr />
+
+<p>
+    <b>
+        <i>
+            @Html.ActionLink( "Create New", "Create")
+        </i>
+    </b>
+</p>
+
+<table class="table">
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <b>
+                        <i>
+                            <hr />
+                            @Html.DisplayFor(modelItem => item.categoryName)
+                            @Html.ActionLink("Details", "AdminDetails", new {id =item.categoryId})
+                            @Html.ActionLink("Delete", "Delete", new {id = item.categoryId})
+                        </i>
+                    </b>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
